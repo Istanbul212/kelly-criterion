@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/kelly-criterion/static/css/main.e0913a47.chunk.css",
+    "main.js": "/kelly-criterion/static/js/main.8094247c.chunk.js",
+    "main.js.map": "/kelly-criterion/static/js/main.8094247c.chunk.js.map",
+    "runtime-main.js": "/kelly-criterion/static/js/runtime-main.a8ec694d.js",
+    "runtime-main.js.map": "/kelly-criterion/static/js/runtime-main.a8ec694d.js.map",
+    "static/js/2.6ecc77a5.chunk.js": "/kelly-criterion/static/js/2.6ecc77a5.chunk.js",
+    "static/js/2.6ecc77a5.chunk.js.map": "/kelly-criterion/static/js/2.6ecc77a5.chunk.js.map",
+    "index.html": "/kelly-criterion/index.html",
+    "static/css/main.e0913a47.chunk.css.map": "/kelly-criterion/static/css/main.e0913a47.chunk.css.map",
+    "static/js/2.6ecc77a5.chunk.js.LICENSE.txt": "/kelly-criterion/static/js/2.6ecc77a5.chunk.js.LICENSE.txt",
+    "static/media/hot-chocolate.d4dc4ddc.jpg": "/kelly-criterion/static/media/hot-chocolate.d4dc4ddc.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a8ec694d.js",
+    "static/js/2.6ecc77a5.chunk.js",
+    "static/css/main.e0913a47.chunk.css",
+    "static/js/main.8094247c.chunk.js"
+  ]
+}
