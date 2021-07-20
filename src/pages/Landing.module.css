@@ -1,0 +1,27 @@
+.instruction {
+    height: 10rem;
+    overflow: scroll;
+}
+
+ul {
+    list-style: none;
+    margin: 2rem;
+    padding: 0;
+    align-items: baseline;
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    border: 1px solid black;
+    padding: 20px 50px;
+    background-color: #A5A58D;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: white;
+}
