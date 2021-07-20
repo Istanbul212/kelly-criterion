@@ -10,10 +10,10 @@ function App() {
   return (
     <Layout>
       <Switch>
-        <Route path="/" exact>
+        <Route path="/kelly-criterion/" exact>
           <Landing />
         </Route>
-        <Route path="/:difficulty/:time">
+        <Route path="/kelly-criterion/:difficulty/:time">
           <Game />
         </Route>
       </Switch>
