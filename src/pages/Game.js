@@ -213,8 +213,6 @@ function Game() {
         setTimer(timer - 1);
       }
       if (timer === 0) {
-        console.log("handle1");
-        console.log(timer);
         handleRound(0);
       }
     }, 1000);
@@ -263,47 +261,52 @@ function Game() {
             (lowerB - 0.5 * questionBounds) /
               Math.sqrt(0.5 * 0.5 * questionBounds)
           );
-        for (var i = 0; i < questionBounds; i++) {
-          nAnswer += getRandomInt(0, 2);
-        }
+      }
+      for (var i = 0; i < questionBounds; i++) {
+        nAnswer += getRandomInt(0, 2);
       }
     }
     setAnswer(nAnswer);
     let kellyWager = Math.max(
       0,
-      Math.round((p / (lO / 100) - (1 - p) / (wO / 100)) * kellyScore)
+      Math.floor((p / (lO / 100) - (1 - p) / (wO / 100)) * kellyScore)
     );
-    console.log(p, lO, kellyScore, kellyWager);
     if (nAnswer >= lowerB && nAnswer <= upperB) {
       setKellyDelta(kellyWager);
       setKellyScore(() => {
         setKellyScoreHistory([
           ...kellyScoreHistory,
-          [round, kellyScore + kellyWager],
+          [round, kellyScore + Math.round((kellyWager * wO) / 100)],
         ]);
-        return kellyScore + kellyWager;
+        return kellyScore + Math.round((kellyWager * wO) / 100);
       });
       setDelta(wager);
       setScore(() => {
-        setScoreHistory([...scoreHistory, [round, score + wager]]);
-        return score + wager;
+        setScoreHistory([
+          ...scoreHistory,
+          [round, score + Math.round((wager * wO) / 100)],
+        ]);
+        return score + Math.round((wager * wO) / 100);
       });
     } else {
       setKellyDelta(-1 * kellyWager);
       setKellyScore(() => {
         setKellyScoreHistory([
           ...kellyScoreHistory,
-          [round, kellyScore - kellyWager],
+          [round, kellyScore - Math.round((kellyWager * lO) / 100)],
         ]);
-        return kellyScore - kellyWager;
+        return kellyScore - Math.round((kellyWager * lO) / 100);
       });
       setDelta(-1 * wager);
       setScore(() => {
-        setScoreHistory([...scoreHistory, [round, score - wager]]);
-        if (score === wager) {
+        setScoreHistory([
+          ...scoreHistory,
+          [round, score - Math.round((wager * lO) / 100)],
+        ]);
+        if (score === Math.round((wager * lO) / 100)) {
           setRound(Math.floor(300 / time) + 1);
         }
-        return score - wager;
+        return score - Math.round((wager * lO) / 100);
       });
     }
   };
@@ -311,7 +314,6 @@ function Game() {
     if (round <= Math.floor(300 / time)) {
       setTimer(time);
       redistributeWealth(wager);
-      console.log(kellyScore);
       setRound(round + 1);
       let qT = getRandomInt(0, 3);
       if (qT === 0) {
@@ -373,7 +375,6 @@ function Game() {
         }
       });
       setText("");
-      console.log("next round");
     } else {
       setTimer(-1);
     }
@@ -388,9 +389,8 @@ function Game() {
   };
 
   const checkUserInput = (e) => {
-    if (e.key === "Enter" && text >= 0 && text <= score) {
+    if (e.key === "Enter" && text !== "" && text >= 0 && text <= score) {
       handleRound(parseInt(text));
-      console.log("handle2");
     }
   };
 
