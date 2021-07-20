@@ -272,7 +272,7 @@ function Game() {
       Math.floor((p / (lO / 100) - (1 - p) / (wO / 100)) * kellyScore)
     );
     if (nAnswer >= lowerB && nAnswer <= upperB) {
-      setKellyDelta(kellyWager);
+      setKellyDelta(kellyWager * wO);
       setKellyScore(() => {
         setKellyScoreHistory([
           ...kellyScoreHistory,
@@ -280,7 +280,7 @@ function Game() {
         ]);
         return kellyScore + Math.round((kellyWager * wO) / 100);
       });
-      setDelta(wager);
+      setDelta(wager * wO);
       setScore(() => {
         setScoreHistory([
           ...scoreHistory,
@@ -289,7 +289,7 @@ function Game() {
         return score + Math.round((wager * wO) / 100);
       });
     } else {
-      setKellyDelta(-1 * kellyWager);
+      setKellyDelta(-1 * kellyWager * lO);
       setKellyScore(() => {
         setKellyScoreHistory([
           ...kellyScoreHistory,
@@ -297,7 +297,7 @@ function Game() {
         ]);
         return kellyScore - Math.round((kellyWager * lO) / 100);
       });
-      setDelta(-1 * wager);
+      setDelta(-1 * wager * lO);
       setScore(() => {
         setScoreHistory([
           ...scoreHistory,
