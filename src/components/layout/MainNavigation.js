@@ -7,7 +7,7 @@ function MainNavigation() {
   return (
     <header className={classes.header}>
       <nav>
-        <Link to="/" className={classes.logo}>
+        <Link to="/kelly-criterion/" className={classes.logo}>
           <div>Trader's Tavern</div>
           <img src={companyLogo} />
         </Link>

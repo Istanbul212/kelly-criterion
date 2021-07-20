@@ -16,13 +16,13 @@ function Landing() {
         you should not let any biases w.r.t the Kelly Criterion score influence your decisions. Good luck!
       </div>
       <ul>
-        <Link to="/casual/12">
+        <Link to="/kelly-criterion/casual/12">
           <li>Casual</li>
         </Link>
-        <Link to="/practical/6">
+        <Link to="/kelly-criterion/practical/6">
           <li>Practical</li>
         </Link>
-        <Link to="/masochist/3">
+        <Link to="/kelly-criterion/masochist/3">
           <li>Masochist</li>
         </Link>
       </ul>
