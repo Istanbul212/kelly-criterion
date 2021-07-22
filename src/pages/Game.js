@@ -271,6 +271,7 @@ function Game() {
       0,
       Math.floor((p / (lO / 100) - (1 - p) / (wO / 100)) * kellyScore)
     );
+    kellyWager = Math.min(kellyWager, kellyScore);
     if (nAnswer >= lowerB && nAnswer <= upperB) {
       setKellyDelta(Math.round((kellyWager * wO) / 100));
       setKellyScore(() => {
