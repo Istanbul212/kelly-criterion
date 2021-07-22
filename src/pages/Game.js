@@ -271,7 +271,6 @@ function Game() {
       0,
       Math.floor((p / (lO / 100) - (1 - p) / (wO / 100)) * kellyScore)
     );
-    kellyWager = Math.min(kellyWager, kellyScore);
     if (nAnswer >= lowerB && nAnswer <= upperB) {
       setKellyDelta(Math.round((kellyWager * wO) / 100));
       setKellyScore(() => {
@@ -390,7 +389,12 @@ function Game() {
   };
 
   const checkUserInput = (e) => {
-    if (e.key === "Enter" && text !== "" && text >= 0 && text <= score) {
+    if (
+      e.key === "Enter" &&
+      text !== "" &&
+      text >= 0 &&
+      text <= (score * 100) / lO
+    ) {
       handleRound(parseInt(text));
     }
   };
